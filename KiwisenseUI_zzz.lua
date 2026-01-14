@@ -1492,7 +1492,7 @@ local Library do
         return CoreGui
     end
 
-    getgenv().Options = { }
+    -- getgenv().Options = { }
 
     -- Library
     Library = {
