@@ -1492,7 +1492,7 @@ local Library do
         return CoreGui
     end
 
-    -- getgenv().Options = { }
+    getgenv().Options = { }
 
     -- Library
     Library = {
@@ -2141,7 +2141,7 @@ local Library do
             ["Dark Gradient"] = FromRGB(211, 211, 211),
             ["Inactive Text"] = FromRGB(185, 185, 185),
             ["Element"] = FromRGB(34, 39, 45),
-            ["Accent"] = FromRGB(255, 0, 0),
+            ["Accent"] = FromRGB(196, 231, 255),
             ["Border"] = FromRGB(32, 36, 42)
         },
 
