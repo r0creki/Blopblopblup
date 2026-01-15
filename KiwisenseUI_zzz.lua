@@ -1335,6 +1335,7 @@ local Options, MiscOptions do
                         Match = "Weapon"
                     end
 
+
                     if Text then 
                         if key == Match .. "_Text" then  
                             if Text.Parent == nil then 
@@ -1409,7 +1410,7 @@ local Options, MiscOptions do
         end 
     end
 
-    for _,player in Players:GetPlayers() do 
+    --[[for _,player in Players:GetPlayers() do 
         if player == Players.LocalPlayer then continue end
         Esp.CreateObject(player)
     end 
@@ -1423,7 +1424,24 @@ local Options, MiscOptions do
 
     Esp:Connection(Players.PlayerRemoving, Esp.RemovePlayer)
 
-    Esp.Loop = RunService:BindToRenderStep("Run Loop", 0, Esp.Update)
+    Esp.Loop = RunService:BindToRenderStep("Run Loop", 0, Esp.Update)]]
+
+    for _, player in Players:GetPlayers() do
+    if player ~= Players.LocalPlayer then
+        Esp.CreateObject(player)
+    end
+end
+
+Esp:Connection(Players.PlayerAdded, function(player)
+    if player ~= Players.LocalPlayer then
+        Esp.CreateObject(player)
+    end
+end)
+
+Esp:Connection(Players.PlayerRemoving, Esp.RemovePlayer)
+
+Esp.Loop = RunService:BindToRenderStep("Run Loop", 0, Esp.Update)
+
 
     for index,value in MiscOptions do 
         Options[index] = value -- gotta trigger that new index
