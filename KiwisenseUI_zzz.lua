@@ -2133,7 +2133,7 @@ local Library do
 
     local Themes = {
         ["Preset"] = {
-            ["Background"] = FromRGB(16, 18, 21),
+            ["Background"] = FromRGB(0, 0, 0),
             ["Inline"] = FromRGB(22, 25, 29),
             ["Shadow"] = FromRGB(0, 0, 0),
             ["Text"] = FromRGB(255, 255, 255),
