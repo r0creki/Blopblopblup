@@ -1329,7 +1329,7 @@ local Options, MiscOptions do
                     elseif string.match(key, "Distance") then 
                         Text = Items.Distance
                         Match = "Distance"
-                    end
+                    end 
 
                     if Text then 
                         if key == Match .. "_Text" then  
@@ -1410,9 +1410,7 @@ local Options, MiscOptions do
         Esp.CreateObject(player)
     end 
 
-        Esp:Connection(Players.PlayerRemoving, Esp.RemovePlayer)
-
-
+    Esp:Connection(Players.PlayerRemoving, Esp.RemovePlayer)
     Esp:Connection(Players.PlayerAdded, function(player)
         Esp.CreateObject(player)
         for index,value in MiscOptions do 
@@ -1420,8 +1418,7 @@ local Options, MiscOptions do
         end 
     end)
 
-
-    Esp.Loop = RunService:BindToRenderStep("Run Loop", 0, Esp.Update
+    Esp.Loop = RunService:BindToRenderStep("Run Loop", 0, Esp.Update)
 
     for index,value in MiscOptions do 
         Options[index] = value -- gotta trigger that new index
@@ -1495,7 +1492,7 @@ local Library do
         return CoreGui
     end
 
-    -- getgenv().Options = { }
+    getgenv().Options = { }
 
     -- Library
     Library = {
